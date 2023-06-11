@@ -1,15 +1,44 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import { supabase } from "../client";
+import CreatorCard from "../components/content-creator/CreatorCard";
 
 const ViewCreator = () => {
+
+  const [error, setError] = useState(null);
+  const [creatorverse, setCreatorverse] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+        const { data, error } = await supabase
+          .from('creatorverse')
+          .select();
+        
+        if (error) {
+          setError('Error fetching data:', error.message);
+          setCreatorverse(null);
+          console.log(error);
+        }
+        if (data) {
+          setCreatorverse(data);
+          setError(null);
+        }
+      }
+
+    fetchData(); 
+  }, []); // Empty dependency array to run the effect only once
+
   return (
-    <article>
-      <h1>My First Component</h1>
-      <ol>
-        <li>Components: UI Building Blocks</li>
-        <li>Defining a Component</li>
-        <li>Using a Component</li>
-      </ol>
-    </article>
+    <>
+    {error && (<p>{error}</p>)}
+      {creatorverse && (
+        <div className="creators">
+          {creatorverse.map((creator) => (
+            <CreatorCard key={creator.id} creator={creator}/>
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 
