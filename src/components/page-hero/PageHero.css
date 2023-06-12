@@ -29,6 +29,24 @@ img {
     -12px 20px 0px #171717, -14px 23px 0px #000;
 }
 
+.btns {
+  background-color: pink;
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+  margin: 10px;
+  opacity: 80%;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btns:hover {
+  opacity: 100%;
+  color: white;
+  transition: ease-in-out 0.5s;
+}
 
 .cards {
   background-color: #000;

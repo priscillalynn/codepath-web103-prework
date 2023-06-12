@@ -1,6 +1,5 @@
 import React from "react";
 import "./PageHero.css";
-import Button from "../buttons/Button";
 import '../../../src/client'
 
 const PageHero = () => {
@@ -14,8 +13,8 @@ const PageHero = () => {
       />
       <h1>CREATORVERSE</h1>
       <div className="hero-btns">
-        <Button className='btns' buttonStyle='button--outline' buttonSize='btn--large'>View all Creators</Button>
-        <Button className='btns' buttonStyle='button--primary' buttonSize='btn--large'>Add a Creator</Button>
+        <a href='/viewcreator' className='btns'>View all Creators</a>
+        <a href='/addcreator' className='btns'>Add a Creator</a>
       </div>
     </div>
 
