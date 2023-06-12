@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { supabase } from "../client";
 import CreatorCard from "../components/content-creator/CreatorCard";
+import '../components/content-creator/CreatorCard.css'
 
 const ViewCreator = () => {
 

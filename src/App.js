@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ShowCreators from "./pages/ShowCreators";
+import Home from "./pages/Home";
 import AddCreator from "./pages/AddCreator";
 import EditCreator from "./pages/EditCreator";
 import ViewCreator from "./pages/ViewCreator";
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ShowCreators />} />
+          <Route path="/" element={<Home />} />
           <Route path="addcreator" element={<AddCreator />} />
           <Route path="editcreator" element={<EditCreator />} />
           <Route path="viewcreator" element={<ViewCreator />} />

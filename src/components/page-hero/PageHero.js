@@ -1,9 +1,11 @@
 import React from "react";
 import "./PageHero.css";
 import Button from "../buttons/Button";
+import '../../../src/client'
 
 const PageHero = () => {
   return (
+    <>
     <div className="hero-container">
       <img
         src="https://i.pinimg.com/originals/82/f3/3c/82f33c83e658969547fbce1afda7c1b5.gif"
@@ -16,6 +18,13 @@ const PageHero = () => {
         <Button className='btns' buttonStyle='button--primary' buttonSize='btn--large'>Add a Creator</Button>
       </div>
     </div>
+
+     <div className='cards'>
+     <h1>Content Creator Cards</h1>
+     <div className='cards-container'></div>
+     <div className='cards-wrapper'></div>
+ </div>
+ </>
   );
 };
 
