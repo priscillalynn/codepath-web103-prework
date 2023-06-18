@@ -54,7 +54,7 @@ img {
 
 form {
   display: flex;
-  opacity: 70%;
+  opacity: 0.7;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -64,22 +64,47 @@ form {
   border-radius: 10px;
 }
 
-input { 
-   /*make all input boxes aligned*/
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  width: 100%;
-}
-
-label {
+input, textarea {
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
   outline: none;
   border: none;
   width: 50%;
+}
+
+textarea[name='description'] {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  width: 50%;
+  height: 150px;
+  resize: vertical;
+}
+
+label {
+  margin: 10px;
   text-align: center;
+  width: 100%;
+}
+
+#add-creator-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.add-creator-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #434141;
+  color: white;
+  cursor: pointer;
+}
+
+.add-creator-btn:hover {
+  background-color: #666464;
 }

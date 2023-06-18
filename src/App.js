@@ -5,6 +5,7 @@ import AddCreator from "./pages/AddCreator";
 import EditCreator from "./pages/EditCreator";
 import ViewCreator from "./pages/ViewCreator";
 import DeleteCreator from "./pages/DeleteCreator";
+import CreatorPage from "./pages/CreatorPage";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="addcreator" element={<AddCreator />} />
           <Route path="editcreator" element={<EditCreator />} />
           <Route path="viewcreator" element={<ViewCreator />} />
+          <Route path="/creator/:id" component={CreatorPage} />
           <Route path="deletecreator" element={<DeleteCreator />} />
           </Route>
         </Routes>

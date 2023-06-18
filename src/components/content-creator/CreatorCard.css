@@ -1,3 +1,10 @@
+.all-cards-container {
+    display: grid;
+    grid-template-columns: repeat(300fr, minmax(300px, 1fr));
+    grid-gap: 40px;
+    margin: 10px;
+}
+
 .creator-card-container {
     display: flex;
     flex-direction: column;
@@ -32,10 +39,35 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin: 10px;
+    text-align: center;
 }
 
 .icons {
     display: flex;
     justify-content: center;
     margin: 5px;
+}
+
+.desc {
+    margin: 10px;
+    text-align: center;
+}
+
+.youtube-icon {
+  color: red;
+  margin: auto;
+  font-size: 50px;
+  display: flex;
+}
+
+
+.youtube-icon:hover {
+  color: white;
+  cursor: pointer;
+  transition: ease-out 0.1s;
+}
+
+.info-icon, .edit-icon {
+   color: pink;
+   padding: 10px;
 }

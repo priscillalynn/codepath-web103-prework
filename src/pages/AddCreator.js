@@ -59,15 +59,14 @@ const AddCreator = () => {
       <label>
       Provide a description of the creator. Who are they? What makes them interesting?
       <br />
-        <input
-          type="description"
-          textarea name='description'
-          rows='3'
-          cols='50'
-          value={description}
-          required={true}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+      <textarea
+  name="description"
+  rows={3}
+  value={description}
+  required={true}
+  onChange={(e) => setDescription(e.target.value)}
+/>
+
       </label>
       <br />
       <h3 className='form-titles'>SOCIAL MEDIA</h3>
@@ -82,7 +81,10 @@ const AddCreator = () => {
         />
       </label>
       <br />
-      <button type="submit">Add Creator</button>
+      <div id="add-creator-btn">
+  <button class="add-creator-btn" type="submit">Add Creator</button>
+</div>
+
     </form>
   );
 };
