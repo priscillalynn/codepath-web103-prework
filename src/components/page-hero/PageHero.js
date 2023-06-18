@@ -19,7 +19,6 @@ const PageHero = () => {
     </div>
 
      <div className='cards'>
-     <h1>Content Creator Cards</h1>
      <div className='cards-container'></div>
      <div className='cards-wrapper'></div>
  </div>

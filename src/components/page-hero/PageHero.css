@@ -13,7 +13,6 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   object-fit: contain;
 }
 
@@ -48,16 +47,39 @@ img {
   transition: ease-in-out 0.5s;
 }
 
-.cards {
-  background-color: #000;
-  padding: 50px;
-}
-
 .cards > h1 {
   color: white;
   text-align: center;
 }
 
-.cards-container {
+form {
+  display: flex;
+  opacity: 70%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
   background-color: #000;
+  color: white;
+  border-radius: 10px;
+}
+
+input { 
+   /*make all input boxes aligned*/
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+label {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  width: 50%;
+  text-align: center;
 }

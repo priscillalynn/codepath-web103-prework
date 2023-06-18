@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../client'
 import { supabase } from '../client';
+import '../components/page-hero/PageHero.css'
 
 const AddCreator = () => {
   const [name, setName] = useState('');
@@ -33,39 +34,51 @@ const AddCreator = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h3 className='form-titles'>CREATOR NAME</h3>
       <label>
-        Name:
         <input
           type="text"
           value={name}
+          required={true}
           onChange={(e) => setName(e.target.value)}
         />
       </label>
       <br />
+      <h3 className='form-titles'>IMAGE URL</h3>
       <label>
-        url:
-        <input
-          type="url"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-        />
-      </label>
+      Provide a link to an image of your creator. Be sure to include the http://
       <br />
-      <label>
-        Description:
-        <input
-          type="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        imageURL:
         <input
           type="imageURL"
           value={imageURL}
           onChange={(e) => setImageURL(e.target.value)}
+        />
+      </label>
+      <br />
+      <h3 className='form-titles'>DESCRIPTION</h3>
+      <label>
+      Provide a description of the creator. Who are they? What makes them interesting?
+      <br />
+        <input
+          type="description"
+          textarea name='description'
+          rows='3'
+          cols='50'
+          value={description}
+          required={true}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+      </label>
+      <br />
+      <h3 className='form-titles'>SOCIAL MEDIA</h3>
+      <label>
+      Provide at least one of the creator's social media links.
+      <br />
+        <input
+          type="url"
+          value={url}
+          required={true}
+          onChange={(e) => setUrl(e.target.value)}
         />
       </label>
       <br />

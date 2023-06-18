@@ -12,11 +12,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />}>
           <Route path="addcreator" element={<AddCreator />} />
           <Route path="editcreator" element={<EditCreator />} />
           <Route path="viewcreator" element={<ViewCreator />} />
           <Route path="deletecreator" element={<DeleteCreator />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

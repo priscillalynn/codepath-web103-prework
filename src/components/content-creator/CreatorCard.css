@@ -2,9 +2,13 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 20%;
-    width: 20%;
-    border: 1px solid brown;
+    height: 30%;
+    width: 25%;
+    border: 1px solid pink;
+    border-radius: 20px;
     margin: 50px;
     text-align: center;
+    background-color: #000; 
+    opacity: 70%;
+    color: white;
 }
