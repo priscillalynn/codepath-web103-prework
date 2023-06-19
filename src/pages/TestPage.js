@@ -2,9 +2,7 @@ import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import {
-  Navbar,
   Container,
-  Nav,
   Form,
   Row,
   Col,
@@ -19,62 +17,58 @@ import { supabase } from "../client";
 // implement the CRUD logic for the creators
 
 const TestPage = () => {
-    const [ name, setName ] = useState('');
-    const [ description, setDescription ] = useState('');
-    const [ creators, setCreators ] = useState([]);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [creators, setCreators] = useState([]);
 
-    console.log(name);
-    console.log(description);
+  console.log(name);
+  console.log(description);
 
-    useEffect(() => {
-        getCreators();
-    }, []);
+  useEffect(() => {
+    getCreators();
+  }, []);
 
-    async function getCreators() {
-        try {
-            const { data, error } = await supabase
-            .from('creatorverse')
-            .select('*')
-            .limit(10)
-        if(error) throw error;
-        if(data != null) {
-            setCreators(data);
-        }
-        } catch(error) {
-            alert(error.message)
-        }
+  // GET/READ FUNCTIONALITY
+  async function getCreators() {
+    try {
+      const { data, error } = await supabase
+        .from("creatorverse")
+        .select("*")
+        .limit(10);
+      if (error) throw error;
+      if (data != null) {
+        setCreators(data);
+      }
+    } catch (error) {
+      alert(error.message);
     }
+  }
 
-    async function addCreator() {
-        try {
-            const { data, error } = await supabase
-            .from('creatorverse')
-            .insert({
-                name: name,
-                description: description
-            })
-            .single()
-        if(error) throw error;
-        window.location.reload();
-        } catch(error) {
-            alert(error.message)
-        }
+  // CREATE FUNCTIONALITY
+  async function addCreator() {
+    try {
+      const { data, error } = await supabase
+        .from("creatorverse")
+        .insert({
+          name: name,
+          description: description,
+        })
+        .single();
+      if (error) throw error;
+      window.location.reload();
+    } catch (error) {
+      alert(error.message);
     }
+  }
 
   return (
     <>
-      <Navbar>
-        <Container>
-          <Navbar.Brand>Creator Cards</Navbar.Brand>
-          <Nav>
-            <Nav.Item>Created by Priscilla Colon</Nav.Item>
-          </Nav>
-        </Container>
-      </Navbar>
       <Container>
         <Row>
           <Col xs={12} md={8}>
-            <h3>CREATORVERSE</h3>
+            <div className="page-hero">
+              <h1 className="page-hero-title">CREATORVERSE</h1>
+            </div>
             <Form.Label>Creator Name</Form.Label>
             <Form.Control
               type="text"
@@ -88,17 +82,19 @@ const TestPage = () => {
               onChange={(e) => setDescription(e.target.value)}
             />
             <br></br>
-            <Button onClick={() => addCreator()}>Add Creator to Supabase</Button>
+            <Button onClick={() => addCreator()}>
+              Add Creator to Supabase
+            </Button>
           </Col>
         </Row>
         <hr></hr>
         <h3>Current Cards</h3>
         <Row xs={1} lg={3} className="g-4">
-            {creators.map((creator) => (
-                <Col>
-                <TestCard creator={creator}/>
-                </Col>
-                ))}
+          {creators.map((creator) => (
+            <Col>
+              <TestCard creator={creator} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </>

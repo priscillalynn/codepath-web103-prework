@@ -9,6 +9,7 @@ const TestCard = (props) => {
   const [name, setName] = useState(creator.name);
   const [description, setDescription] = useState(creator.description);
 
+  // UPDATE FUNCTIONALITY
   async function updateCreator() {
     try {
         const { data, error } = await supabase
@@ -25,6 +26,7 @@ const TestCard = (props) => {
     }
   }
 
+  // DELETE FUNCTIONALITY
   async function deleteCreator() {
     try {
         const { data, error } = await supabase
