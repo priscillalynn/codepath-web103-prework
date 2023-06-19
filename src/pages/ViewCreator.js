@@ -35,7 +35,7 @@ const ViewCreator = () => {
       {creatorverse && (
         <div className="creators">
           {creatorverse.map((creator) => (
-            <CreatorCard key={creator.id} creator={creator}/>
+            <CreatorCard key={creator.id} creator={creator} />
           ))}
         </div>
       )}

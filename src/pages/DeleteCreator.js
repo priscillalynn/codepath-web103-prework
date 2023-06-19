@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../client'
 import { supabase } from '../client';
 import '../components/page-hero/PageHero.css';
