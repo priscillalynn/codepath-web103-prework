@@ -42,7 +42,7 @@
     text-align: center;
 }
 
-.icons {
+.top-icons {
     display: flex;
     justify-content: center;
     margin: 5px;
@@ -53,21 +53,25 @@
     text-align: center;
 }
 
+.bottom-icons {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  font-size: 50px;
+}
+
 .youtube-icon {
   color: red;
   margin: auto;
-  font-size: 50px;
-  display: flex;
 }
 
+.info-icon, .edit-icon, .delete-icon {
+   color: pink;
+   padding: 10px;
+}
 
-.youtube-icon:hover {
+.youtube-icon:hover, .info-icon:hover, .edit-icon:hover, .delete-icon:hover {
   color: white;
   cursor: pointer;
   transition: ease-out 0.1s;
-}
-
-.info-icon, .edit-icon {
-   color: pink;
-   padding: 10px;
 }
