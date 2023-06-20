@@ -6,6 +6,7 @@ import ViewCreator from "./pages/ViewCreator";
 import DeleteCreator from "./pages/DeleteCreator";
 import CreatorPage from "./pages/CreatorPage";
 import TestPage from "./pages/TestPage";
+import AddCreatorTest from "./pages/AddCreatorTest";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="deletecreator" element={<DeleteCreator />} />
           </Route>
           <Route path="testpage" element={<TestPage />} />
+          <Route path="addcreatortest" element={<AddCreatorTest />} />
         </Routes>
       </BrowserRouter>
     </div>

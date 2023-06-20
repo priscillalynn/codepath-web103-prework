@@ -18,4 +18,18 @@
   .button-container {
     margin-top: 20px;
   }
+
+  .current-cards {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .form-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin-left: 25%;
+  }
   

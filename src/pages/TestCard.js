@@ -44,7 +44,7 @@ const TestCard = (props) => {
 
 
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "18rem", margin: '20px' }}>
       <Card.Body>
         {editing === false ? (
           <>
