@@ -1,13 +1,7 @@
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import {
-  Container,
-  Form,
-  Row,
-  Col,
-  Button,
-} from "react-bootstrap";
+import { Container, Form, Row, Col, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import TestCard from "./TestCard";
 import { supabase } from "../client";
@@ -63,12 +57,23 @@ const TestPage = () => {
 
   return (
     <>
-      <Container>
+      <Container fluid className="p-0">
+        {" "}
+        {/* Add fluid class and p-0 class */}
         <Row>
-          <Col xs={12} md={8}>
-            <div className="page-hero">
-              <h1 className="page-hero-title">CREATORVERSE</h1>
+          <div className="page-hero">
+            <h1 className="page-hero-title">CREATORVERSE</h1>
+            <div className="button-container">
+            <Button onClick={() => addCreator()}>
+                View Creators
+              </Button>
+              <Button onClick={() => addCreator()}>
+                Add Creator to Supabase
+              </Button>
             </div>
+          </div>
+
+          <Col xs={12} md={8}>
             <Form.Label>Creator Name</Form.Label>
             <Form.Control
               type="text"
