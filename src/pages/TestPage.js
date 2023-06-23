@@ -15,6 +15,7 @@ const TestPage = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [creators, setCreators] = useState([]);
+  const [imageUrl, setImageUrl] = useState("");
 
   // Create a ref for the creator cards container
   const creatorCardsRef = useRef(null);
@@ -56,10 +57,14 @@ const TestPage = () => {
           <div className="page-hero">
             <h1 className="page-hero-title">CREATORVERSE</h1>
             <div className="button-container">
+              <div className="main-btns">
               <Button onClick={scrollToCreatorCards}>View Creators</Button>
+              </div>
+              <div className="main-btns">
               <Link to="/AddCreatorTest">
                 <Button>Add Creator</Button>
               </Link>
+              </div>
             </div>
           </div>
         </Row>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=VT323&display=swap');
+
 .page-hero {
     display: flex;
     flex-direction: column;
@@ -5,23 +7,34 @@
     justify-content: center;
     height: 75vh;
     width: 100%;
-    background-color: #c6ddd7;
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    
   }
   
   .page-hero-title {
-    color: #333;
-    font-size: 36px;
+    color: #fff;
+    font-size: 150px;
     font-weight: bold;
     margin-bottom: 20px;
+    font-family: 'Londrina Outline', cursive;
   }
   
   .button-container {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main-btns {
+    margin: 10px;
   }
 
   .current-cards {
+    color: #575656;
     text-align: center;
     margin-top: 20px;
+    font-family: 'Londrina Outline', cursive;
+    font-weight: bold;
   }
   
   .form-col {
@@ -32,4 +45,5 @@
     padding: 50px;
     margin-left: 25%;
   }
+  
   

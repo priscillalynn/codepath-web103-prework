@@ -13,6 +13,8 @@ const AddCreatorTest = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [creators, setCreators] = useState([]);
+  const [imageUrl, setImageUrl] = useState("");
+
 
   // CREATE FUNCTIONALITY
   async function addCreator() {
@@ -40,12 +42,16 @@ const AddCreatorTest = () => {
           <div className="page-hero">
             <h1 className="page-hero-title">CREATORVERSE</h1>
             <div className="button-container">
+              <div className="main-btns">
               <Link to="/TestPage">
                 <Button>Return to Home</Button>
               </Link>
+              </div>
+              <div className="main-btns">
               <Link to="/AddCreatorTest">
                 <Button>Add Creator</Button>
               </Link>
+              </div>
             </div>
           </div>
           <Col className="form-col" xs={12} md={8} lg={6}>
@@ -65,8 +71,9 @@ const AddCreatorTest = () => {
             <h6>Provide a link to an image of your creator. Be sure to include the http://</h6>
             <Form.Control
               type="text"
-              id="name"
-              onChange={(e) => setName(e.target.value)}
+              id="imageUrl"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
             />
             <br></br>
             <h5>Social Media Links</h5>

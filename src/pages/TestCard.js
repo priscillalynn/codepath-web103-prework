@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card, Button, Form } from "react-bootstrap";
 import { supabase } from "../client";
+import "../App.css";
 
 const TestCard = (props) => {
   const creator = props.creator;
@@ -8,43 +9,52 @@ const TestCard = (props) => {
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(creator.name);
   const [description, setDescription] = useState(creator.description);
+  const [imageUrl, setImageUrl] = useState(creator.imageUrl);
 
   // UPDATE FUNCTIONALITY
   async function updateCreator() {
     try {
-        const { data, error } = await supabase
-        .from('creatorverse')
+      const { data, error } = await supabase
+        .from("creatorverse")
         .update({
-            name: name,
-            description: description
+          name: name,
+          description: description,
+          imageUrl: imageUrl,
         })
-        .eq('id', creator.id)
-    if(error) throw error;
-    window.location.reload();
-    } catch(error) {
-        alert(error.message)
+        .eq("id", creator.id);
+      if (error) throw error;
+      window.location.reload();
+    } catch (error) {
+      alert(error.message);
     }
   }
 
   // DELETE FUNCTIONALITY
   async function deleteCreator() {
     try {
-        const { data, error } = await supabase
-        .from('creatorverse')
+      const { data, error } = await supabase
+        .from("creatorverse")
         .delete()
-        .eq('id', creator.id)
+        .eq("id", creator.id);
 
-    if(error) throw error;
-    window.location.reload();
-    } catch(error) {
-        alert(error.message)
+      if (error) throw error;
+      window.location.reload();
+    } catch (error) {
+      alert(error.message);
     }
   }
-  
-
 
   return (
-    <Card style={{ width: "18rem", margin: '20px' }}>
+   <Card 
+      style={{
+        width: "18rem",
+        margin: "20px",
+        backgroundImage: `url(${creator.imageUrl})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      
       <Card.Body>
         {editing === false ? (
           <>
@@ -53,7 +63,9 @@ const TestCard = (props) => {
             <Button variant="secondary" onClick={() => setEditing(true)}>
               Edit
             </Button>
-            <Button variant="danger" onClick={() => deleteCreator()}>Delete</Button>
+            <Button variant="danger" onClick={() => deleteCreator()}>
+              Delete
+            </Button>
           </>
         ) : (
           <>
@@ -81,7 +93,16 @@ const TestCard = (props) => {
               onChange={(e) => setDescription(e.target.value)}
             />
             <br></br>
-            <Button onClick={() => updateCreator()}>Update Creator to Supabase</Button>
+            <Form.Label>Creator Image URL</Form.Label>
+            <Form.Control
+              type="text"
+              id="imageUrl" 
+              defaultValue={creator.imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+            />
+            <Button onClick={() => updateCreator()}>
+              Update Creator to Supabase
+            </Button>
           </>
         )}
       </Card.Body>
