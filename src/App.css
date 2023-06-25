@@ -45,5 +45,12 @@
     padding: 50px;
     margin-left: 25%;
   }
-  
-  
+
+  .update-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer {
+    color: #ffffff;
+  }
