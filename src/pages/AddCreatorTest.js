@@ -2,18 +2,18 @@ import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Container, Form, Row, Col, Button } from "react-bootstrap";
-import { useRef, useState, useEffect } from "react";
-import TestCard from "./TestCard";
+import { useState } from "react";
 import { supabase } from "../client";
 import { Link } from "react-router-dom";
-import { BiHomeHeart } from "react-icons/bi";
 import { AiFillYoutube, AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
 
 const AddCreatorTest = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [creators, setCreators] = useState([]);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageURL, setImageURL] = useState("");
+  const [youtubeLink, setYoutubeLink] = useState("");
+  const [instagramLink, setInstagramLink] = useState("");
+  const [twitterLink, setTwitterLink] = useState("");
 
 
   // CREATE FUNCTIONALITY
@@ -24,6 +24,7 @@ const AddCreatorTest = () => {
         .insert({
           name: name,
           description: description,
+          url: imageURL,
         })
         .single();
       if (error) throw error;
@@ -70,10 +71,10 @@ const AddCreatorTest = () => {
             <Form.Label>Creator Image</Form.Label>
             <h6>Provide a link to an image of your creator. Be sure to include the http://</h6>
             <Form.Control
-              type="text"
-              id="imageUrl"
-              value={imageUrl}
-              onChange={(e) => setImageUrl(e.target.value)}
+              type="url"
+              id="imageURL"
+              value={imageURL}
+              onChange={(e) => setImageURL(e.target.value)}
             />
             <br></br>
             <h5>Social Media Links</h5>
@@ -82,22 +83,22 @@ const AddCreatorTest = () => {
             <h6>The creator's YouTube handle (without the @)</h6>
             <Form.Control
               type="text"
-              id="name"
-              onChange={(e) => setName(e.target.value)}
+              id="youtubeLink"
+              onChange={(e) => setYoutubeLink(e.target.value)}
             />
             <Form.Label><AiFillInstagram/>Instagram</Form.Label>
             <h6>The creator's Instagram handle (without the @)</h6>
             <Form.Control
               type="text"
-              id="name"
-              onChange={(e) => setName(e.target.value)}
+              id="instagramLink"
+              onChange={(e) => setInstagramLink(e.target.value)}
             />
             <Form.Label><AiOutlineTwitter/>Twitter</Form.Label>
             <h6>The creator's Twitter handle (without the @)</h6>
             <Form.Control
               type="text"
-              id="name"
-              onChange={(e) => setName(e.target.value)}
+              id="twitterLink"
+              onChange={(e) => setTwitterLink(e.target.value)}
             />
             <br></br>
             <Button onClick={() => addCreator()}>
