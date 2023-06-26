@@ -31,8 +31,7 @@ const MainPage = () => {
     try {
       const { data, error } = await supabase
         .from("creatorverse")
-        .select("*")
-        .limit(10);
+        .select("*");
       if (error) throw error;
       if (data != null) {
         setCreators(data);
