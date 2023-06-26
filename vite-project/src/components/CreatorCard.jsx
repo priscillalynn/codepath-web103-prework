@@ -100,7 +100,7 @@ const CreatorCard = (props) => {
 
               {creator.youtubeLink && (
                 <a
-                  href={creator.youtubeLink}
+                href={`https://www.youtube.com/${creator.youtubeLink}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -117,7 +117,7 @@ const CreatorCard = (props) => {
 
               {creator.instagramLink && (
                 <a
-                  href={creator.instagramLink}
+                href={`https://www.instagram.com/${creator.instagramLink}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -134,7 +134,7 @@ const CreatorCard = (props) => {
 
               {creator.twitterLink && (
                 <a
-                  href={creator.twitterLink}
+                href={`https://www.twitter.com/${creator.twitterLink}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
