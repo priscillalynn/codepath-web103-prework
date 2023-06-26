@@ -4,7 +4,7 @@ Submitted by: **Priscilla Colon**
 
 About this web app: **Creatorverse is a game-changing frontend application that revolutionizes the way you engage with your favorite content creators. With seamless CRUD operations and API interactions, this app offers a comprehensive solution for organizing and staying connected with creators on different platforms that you most adore.**
 
-Time spent: **35 (+ still going)** hours
+Time spent: **38 (approx.)** hours
 
 ## Required Features
 
@@ -28,8 +28,8 @@ The following **optional** features are implemented:
 - [x] An image of each content creator is shown on their content creator card
 
 The following **additional** features are implemented:
-
-* [ ] List anything else that you added to improve the site's functionality!
+List anything else that you added to improve the site's functionality!
+- [x] View Creators button scrolls down to show the cards
 
 ## Video Walkthrough
 
@@ -47,10 +47,14 @@ GIF created with ...  GIF tool here
 ## Notes
 
 Describe any challenges encountered while building the app or any additional context you'd like to add.
+- Working on design first then functional components wasn't the way to go. Had to restart.
+- Figuring out proper file structure while using vite
+- Small design challenges (getting images to display on card components)
+
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2023] [name of copyright owner]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
