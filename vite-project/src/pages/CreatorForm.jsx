@@ -25,6 +25,9 @@ const CreatorForm = () => {
           name: name,
           description: description,
           url: imageURL,
+          youtubeLink: youtubeLink,
+          instagramLink: instagramLink,
+          twitterLink: twitterLink,
         })
         .single();
       if (error) throw error;
@@ -78,7 +81,7 @@ const CreatorForm = () => {
             <h5>Social Media Links</h5>
             <h6>Provide at least one of the creator's social media links.</h6>
             <Form.Label><AiFillYoutube/>YouTube</Form.Label>
-            <h6>The creator's YouTube handle (without the @)</h6>
+            <h6>The creator's YouTube channel (without the @)</h6>
             <Form.Control
               type="text"
               id="youtubeLink"
