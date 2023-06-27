@@ -44,8 +44,6 @@ const MainPage = () => {
   return (
     <>
       <Container fluid className="p-0">
-        {" "}
-        {/* Add fluid class and p-0 class */}
         <Row>
           <div className="page-hero">
             <h1 className="page-hero-title">CREATORVERSE</h1>
@@ -62,7 +60,8 @@ const MainPage = () => {
           </div>
         </Row>
         <div ref={creatorCardsRef}>
-          <h3 className="current-cards">Current Cards</h3>
+          <h3 className="current-cards">Creator Cards</h3>
+          <h6 className="current-cards-subtitle">Click each creator name to view their information page!</h6>
           <Row xs={1} lg={3} className="g-4">
             {creators.map((creator) => (
               <Col>

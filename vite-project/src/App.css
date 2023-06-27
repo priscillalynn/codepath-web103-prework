@@ -38,8 +38,13 @@
     color: #575656;
     text-align: center;
     margin-top: 20px;
-    font-family: 'Londrina Outline', cursive;
-    font-weight: bold;
+    font-family: 'VT323', monospace;
+  }
+
+  .current-cards-subtitle {
+    color: #575656;
+    text-align: center;
+    font-family: 'VT323', monospace;
   }
   
   .form-col {
