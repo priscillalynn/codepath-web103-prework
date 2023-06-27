@@ -11,6 +11,7 @@ import {
 } from "react-icons/ai";
 import { GiCancel } from "react-icons/gi";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 const CreatorCard = (props) => {
   const creator = props.creator;
@@ -79,7 +80,13 @@ const CreatorCard = (props) => {
           {editing === false ? (
             <>
               <Card.Title style={{ textAlign: "center", fontWeight: "bold" }}>
-                {creator.name}
+                <Link
+                  className="card-name"
+                  style={{ color: "white" }}
+                  to={`/creator/${creator.id}`}
+                >
+                  {creator.name}
+                </Link>
                 <FiEdit
                   style={{
                     cursor: "pointer",
@@ -100,7 +107,7 @@ const CreatorCard = (props) => {
 
               {creator.youtubeLink && (
                 <a
-                href={`https://www.youtube.com/${creator.youtubeLink}`}
+                  href={`https://www.youtube.com/${creator.youtubeLink}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -117,7 +124,7 @@ const CreatorCard = (props) => {
 
               {creator.instagramLink && (
                 <a
-                href={`https://www.instagram.com/${creator.instagramLink}`}
+                  href={`https://www.instagram.com/${creator.instagramLink}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -134,7 +141,7 @@ const CreatorCard = (props) => {
 
               {creator.twitterLink && (
                 <a
-                href={`https://www.twitter.com/${creator.twitterLink}`}
+                  href={`https://www.twitter.com/${creator.twitterLink}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -209,7 +216,6 @@ const CreatorCard = (props) => {
               <div className="update-button">
                 <Button onClick={() => updateCreator()}>Update</Button>
               </div>
-              
             </>
           )}
         </Card.Body>
