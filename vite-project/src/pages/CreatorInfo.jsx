@@ -1,29 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Button } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
-import { supabase } from '../client';
-import '../App.css';
+import React, { useEffect, useState } from "react";
+import { Container, Row, Button } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
+import { supabase } from "../client";
+import "../App.css";
+import Footer from "../components/Footer";
+import {
+  AiOutlineTwitter,
+  AiFillYoutube,
+  AiFillInstagram,
+} from "react-icons/ai";
 
-const CreatorInfo = ({ creator }) => {
+const CreatorInfo = () => {
   const { id } = useParams();
+  const [creator, setCreator] = useState([]);
 
   useEffect(() => {
-    fetchCreator();
+    getCreator();
   }, []);
 
-  const fetchCreator = async () => {
+  async function getCreator() {
     try {
       const { data, error } = await supabase
-        .from('creatorverse')
-        .select('*')
-        .eq('id', id)
+        .from("creatorverse")
+        .select("*")
+        .eq("id", id)
         .single();
       if (error) throw error;
-      setCreator(data);
+      if (data) {
+        setCreator(data);
+      }
     } catch (error) {
-      console.error(error);
+      alert(error.message);
     }
-  };
+  }
 
   return (
     <>
@@ -48,15 +57,51 @@ const CreatorInfo = ({ creator }) => {
         <h3 className="current-cards">Creator Card</h3>
         <Row>
           {creator && (
-            <div>
-              <h4 style={{color: "green"}}>{creator.name}</h4>
-              <p>{creator.description}</p>
-              {/* Render additional creator information */}
-              {/* ... */}
+            <div className="creator-details">
+              <img
+                className="creator-image"
+                src={creator.imageURL}
+                alt="creator"
+              />
+              <h3 className="creator-name">{creator.name}</h3>
+              <div className="creator-socials">
+                {creator.youtubeLink && (
+                  <a
+                    href={`https://www.youtube.com/${creator.youtubeLink}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <AiFillYoutube style={{ fontSize: "30px", margin: "5px" }} />
+                  </a>
+                )}
+
+                {creator.instagramLink && (
+                  <a
+                    href={`https://www.instagram.com/${creator.instagramLink}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <AiFillInstagram style={{ fontSize: "30px", margin: "5px" }}  />
+                  </a>
+                )}
+
+                {creator.twitterLink && (
+                  <a
+                    href={`https://www.twitter.com/${creator.twitterLink}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <AiOutlineTwitter  style={{ fontSize: "30px", margin: "5px" }} />
+                  </a>
+                )}
+              </div>
+
+              <p className="creator-description">{creator.description}</p>
             </div>
           )}
         </Row>
       </Container>
+      <Footer />
     </>
   );
 };
