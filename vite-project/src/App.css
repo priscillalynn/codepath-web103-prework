@@ -79,3 +79,17 @@
     margin: 20px;
     border-radius: 20px;
   }
+
+  .info-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .info-page-edit-button {
+    margin: 10px;
+  }
+
+  .info-page-delete-button {
+    margin: 10px;
+  }

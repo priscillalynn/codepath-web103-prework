@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Button } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { supabase } from "../client";
 import "../App.css";
 import Footer from "../components/Footer";
@@ -9,15 +9,20 @@ import {
   AiFillYoutube,
   AiFillInstagram,
 } from "react-icons/ai";
+import CreatorForm from "./CreatorForm";
+
 
 const CreatorInfo = () => {
   const { id } = useParams();
   const [creator, setCreator] = useState([]);
+  const navigate = useNavigate();
+  const [editing, setEditing] = useState(false);
 
   useEffect(() => {
     getCreator();
   }, []);
 
+  // GET FUNCTIONALITY
   async function getCreator() {
     try {
       const { data, error } = await supabase
@@ -29,6 +34,47 @@ const CreatorInfo = () => {
       if (data) {
         setCreator(data);
       }
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+
+  // DELETE FUNCTIONALITY
+  async function deleteCreator() {
+    try {
+      const { data, error } = await supabase
+        .from("creatorverse")
+        .delete()
+        .eq("id", creator.id);
+
+      if (error) throw error;
+      navigate("/"); // navigate to home page
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+
+  //WIP FUNCTIONS
+  function enterEditingMode() {
+    setEditing(true);
+  }
+
+  function exitEditingMode() {
+    setEditing(false);
+  }
+  
+  async function handleFormSubmit(updatedCreator) {
+    try {
+      const { data, error } = await supabase
+        .from("creatorverse")
+        .update(updatedCreator)
+        .eq("id", creator.id);
+
+      if (error) throw error;
+
+      setCreator(updatedCreator);
+      setEditing(false); // Exit editing mode
+
     } catch (error) {
       alert(error.message);
     }
@@ -97,6 +143,11 @@ const CreatorInfo = () => {
               </div>
 
               <p className="creator-description">{creator.description}</p>
+              <div className="info-buttons">
+              <Button className="info-page-edit-button" variant="warning" onClick={() => setEditing(true)}>Edit Creator</Button>
+              <Button className="info-page-delete-button" variant="danger" onClick={() => deleteCreator()}>Delete Creator</Button>
+              </div>
+              
             </div>
           )}
         </Row>
