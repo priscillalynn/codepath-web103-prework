@@ -36,12 +36,12 @@ List anything else that you added to improve the site's functionality!
 Here's a walkthrough of implemented required features:
 
 Viewing and Editing a Creator:
-<!--![viewingandeditingcreator](https://github.com/priscillalynn/codepath-web103-prework/assets/85073401/80fd656d-c3af-4b05-9f6d-19c76f2fa031)-->
-<img src='https://imgur.com/cOIOOI5' title='Video' width='' alt='Video Walkthrough' />
+![viewingandeditingcreator](https://github.com/priscillalynn/codepath-web103-prework/assets/85073401/80fd656d-c3af-4b05-9f6d-19c76f2fa031)
+<!--<img src='https://imgur.com/cOIOOI5' title='Video' width='' alt='Video Walkthrough' />-->
 
 Adding and Deleting a Creator:
-<!--![addinganddeletingcreator](https://github.com/priscillalynn/codepath-web103-prework/assets/85073401/ad8d956b-1550-4a57-af84-3f1f3554662e)-->
-<img src='https://imgur.com/uCxU6BM' title='Video' width='' alt='Video Walkthrough' />
+![addinganddeletingcreator](https://github.com/priscillalynn/codepath-web103-prework/assets/85073401/ad8d956b-1550-4a57-af84-3f1f3554662e)
+<!--<img src='https://imgur.com/uCxU6BM' title='Video' width='' alt='Video Walkthrough' />-->
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
