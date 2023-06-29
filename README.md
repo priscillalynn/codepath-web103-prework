@@ -40,7 +40,7 @@ Here's a walkthrough of implemented required features:
 
 
 ### Editing a Creator:
-![editingcreator](https://github.com/priscillalynn/codepath-web103-prework/assets/85073401/b124e58c-42c5-44b1-a4eb-ffec05944609)
+![editingcreator](https://github.com/priscillalynn/codepath-web103-prework/assets/85073401/f2f42126-1af0-4d72-824d-6e63d00a2a68)
 
 
 ### Adding a Creator:
