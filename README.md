@@ -4,7 +4,7 @@ Submitted by: **Priscilla Colon**
 
 About this web app: **Creatorverse is a game-changing frontend application that revolutionizes the way you engage with your favorite content creators. With seamless CRUD operations and API interactions, this app offers a comprehensive solution for organizing and staying connected with creators on different platforms that you most adore.**
 
-Time spent: **38 (approx.)** hours
+Time spent: **41 (approx.)** hours
 
 ## Required Features
 
@@ -15,7 +15,7 @@ The following **required** functionality is completed:
 - [x] **At least five content creators are displayed on the homepage of the app**
 - [x] **Each content creator item includes their name, a link to their channel/page, and a short description of their content**
 - [x] **API calls use the async/await design pattern via Axios or fetch()**
-- [ ] **Clicking on a content creator item takes the user to their details page, which includes their name, url, and description**
+- [x] **Clicking on a content creator item takes the user to their details page, which includes their name, url, and description**
 - [x] **Each content creator has their own unique URL**
 - [x] **The user can edit a content creator to change their name, url, or description**
 - [x] **The user can delete a content creator**
@@ -35,10 +35,24 @@ List anything else that you added to improve the site's functionality!
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+### Viewing a Creator:
+![viewing](https://github.com/priscillalynn/codepath-web103-prework/assets/85073401/239799f6-6e5e-48d4-829c-f390671d0444)
+
+
+### Editing a Creator:
+![editingcreator](https://github.com/priscillalynn/codepath-web103-prework/assets/85073401/f2f42126-1af0-4d72-824d-6e63d00a2a68)
+
+
+### Adding a Creator:
+![addingcreator](https://github.com/priscillalynn/codepath-web103-prework/assets/85073401/5886b98d-5588-43f6-9271-3f0afb57dc09)
+
+
+### Deleting a Creator:
+![deletingcreator](https://github.com/priscillalynn/codepath-web103-prework/assets/85073401/5aa9c2ed-7270-48f6-92a2-694e18742821)
+
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  GIF tool here
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -47,9 +61,12 @@ GIF created with ...  GIF tool here
 ## Notes
 
 Describe any challenges encountered while building the app or any additional context you'd like to add.
-- Working on design first then functional components wasn't the way to go. Had to restart.
+- Went from working on design first then functional components to the other way around
+- Using React Router to basically make two projects in one then going with the better one
+- Moving files and modules to vite after forgetting it was supposed to go in the vite-project folder
 - Figuring out proper file structure while using vite
-- Small design challenges (getting images to display on card components)
+- Numerous design challenges (getting images to display on card components, page hero to display on each page, a LOT of conditional rendering)
+- and probably more
 
 
 ## License
