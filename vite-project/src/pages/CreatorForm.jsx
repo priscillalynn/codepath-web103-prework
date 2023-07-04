@@ -24,7 +24,7 @@ const CreatorForm = () => {
         .insert({
           name: name,
           description: description,
-          url: imageURL,
+          imageURL: imageURL,
           youtubeLink: youtubeLink,
           instagramLink: instagramLink,
           twitterLink: twitterLink,
@@ -75,7 +75,6 @@ const CreatorForm = () => {
             <Form.Control
               type="url"
               id="imageURL"
-              value={imageURL}
               onChange={(e) => setImageURL(e.target.value)}
             />
             <br></br>
